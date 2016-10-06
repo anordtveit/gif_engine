@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request
-from googlefinance import getQuotes
+import giphypop
+import giphypop
 app = Flask(__name__)
 
-def get_stock_price(ticker):
-    quotes = getQuotes(ticker)
-    price = quotes[0]['LastTradePrice']
-    return "the price of {} is {}".format(ticker, price)
+def gif_search_function(search_term):
+    g = giphypop.Giphy()
+    results = g.search(search_term) #insert search term
+    return results
 
 @app.route('/')
 def index():  #must be right underneath
@@ -19,16 +20,11 @@ def about():  #must be right underneath
 
 @app.route('/results')
 def results():
-    stock = request.values.get('stock')
-    price = get_stock_price(stock)
-    gifs =["one", "two", "three"]
-    return render_template('results.html', price=price, gifs=gifs)
+    gif_search = request.values.get('gif_search')
+    gif_list = gif_search_function(gif_search)
+    #price = get_stock_price(stock)
+    #gifs =["one", "two", "three"]
+    return render_template('results.html', gif_search=gif_search, gif_list=gif_list) #, gifs=gifs)
 
-
-
-# @app.route('/<username>')
-# def profile():  #must be right underneath
-#     user = get_suer(username)
-#     return render_template('profile.html')
 
 app.run(debug=True)
