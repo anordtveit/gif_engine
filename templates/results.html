@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Python Project</title>
+        
+        <!-- Bootstrap 4 CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    </head>
+    <body>
+        
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+            <div class="container">
+                <a class="navbar-brand" href="/">Python Project</a>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1>{{ price }}</h1>
+                {% for gif in gifs%}
+                    {{ gif}}
+                {% endfor %}
+                <p>Stock price</p>
+                <a href="http://www.ft.com" class="btn btn-primary btn-lg">Financial times</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Columns -->
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Running</h2>
+                    <p>I do a lot of running.</p>
+                    <p><a href="http://www.all-athletics.com/node/326822" class="btn btn-secondary">All athletics profile</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Norway</h2>
+                    <p>I'm Norwegian and I love my country.</p>
+                    <p><a href="https://en.wikipedia.org/wiki/Norway" class="btn btn-secondary">Norway</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Jobs</h2>
+                    <p>I currnetly have a job, but if you have a job offer for me please reach out to me on LinkedIn</p>
+                    <p><a href="https://www.linkedin.com/in/audun-nordtveit-3264a17" class="btn btn-secondary">View LinkedIn profile</a></p>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <hr>
+            <footer>
+                <p>© Company 2016</p>
+            </footer>
+
+        </div>
+    </body>
+</html>
