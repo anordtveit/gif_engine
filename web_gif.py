@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 import giphypop
-import giphypop
 app = Flask(__name__)
 
 def gif_search_function(search_term):
@@ -10,9 +9,7 @@ def gif_search_function(search_term):
 
 @app.route('/')
 def index():  #must be right underneath
-    name = request.values.get('name', 'Nobody')
-    greeting = "Hello {}".format(name)
-    return render_template('index.html', greeting = greeting)
+    return render_template('index.html')
 
 @app.route('/about')
 def about():  #must be right underneath
@@ -22,8 +19,6 @@ def about():  #must be right underneath
 def results():
     gif_search = request.values.get('gif_search')
     gif_list = gif_search_function(gif_search)
-    #price = get_stock_price(stock)
-    #gifs =["one", "two", "three"]
     return render_template('results.html', gif_search=gif_search, gif_list=gif_list) #, gifs=gifs)
 
 
