@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import giphypop
+import os
 app = Flask(__name__)
 
 def gif_search_function(search_term):
@@ -22,4 +23,5 @@ def results():
     return render_template('results.html', gif_search=gif_search, gif_list=gif_list) #, gifs=gifs)
 
 
-app.run(debug=True)
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
