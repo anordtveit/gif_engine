@@ -37,5 +37,5 @@ def results():
     return render_template('results.html', gif_search=gif_search, gif_list=gif_list) #points to the result web-page and send requested information to this page so that it is customized
 
 # app.run(debug=True)
- port = int(os.environ.get("PORT", 5000))
- app.run(host="0.0.0.0", port=port)
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
