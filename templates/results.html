@@ -1,3 +1,5 @@
+
+<!-- This is the results web-page. It is customizable and takes inputs from the user -->
 <html>
     <head>
         <title>GIF Search</title>
@@ -10,7 +12,7 @@
         <!-- Navigation Bar -->
         <nav class="navbar navbar-static-top navbar-dark bg-inverse">
             <div class="container">
-                <a class="navbar-brand" href="/">Python Project</a>
+                <a class="navbar-brand" href="/">GIF search engine</a>
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
@@ -25,7 +27,13 @@
         <!-- Jumbotron -->
         <div class="jumbotron">
             <div class="container">
-                <h1>GIFs tagged with "{{ gif_search }}"</h1>
+            <!-- Check if the search_term is valid and return either an error message or the results -->
+                {% if gif_search == "" %}
+                    <h1> Oops!</h1> 
+                    <h5> We are sorry, something went wrong. Please click "Back to search" and try again</h5    >
+                {% else %}
+                    <h1>GIFs tagged with "{{ gif_search }}"</h1>
+                {% endif %}
                 <a href="/">Back to search</a>
             </div>
         </div>
@@ -33,7 +41,7 @@
         <!-- GIF Search Results -->
         <div class="container">
             <div class="card-columns">
-            
+            <!-- Create a for loop that creates cards for every item in the list. -->
                 {% for gif in gif_list%}
                     <div class="card">
                         <a href= {{ gif.url}} target="_blank">

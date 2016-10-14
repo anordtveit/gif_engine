@@ -1,3 +1,4 @@
+<!-- This is the home page -->
 <html>
     <head>
         <title>Python Project</title>
@@ -10,7 +11,7 @@
         <!-- Navigation Bar -->
         <nav class="navbar navbar-static-top navbar-dark bg-inverse">
             <div class="container">
-                <a class="navbar-brand" href="/">Python Project</a>
+                <a class="navbar-brand" href="/">GIF search engine</a>
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
@@ -27,9 +28,10 @@
             <div class="container">
                 <h1>GIF search engine</h1>
                 <p>Search for GIF images in the field below. Enter search terms to find GIF images for what you are looking after (ex. cats, dogs, Donald Trump etc.) and press the submit button.</p>
+                <!-- Create a form that takes inputs from the user and send the user to the right result-page -->
                 <form action="/results" class="form-inline">
                     <div class="form-group">
-                        <input type="text" name="gif_search" placeholder="Enter a GIF-search term" class="form-control">
+                        <input type="text" name="gif_search" placeholder="Enter a GIF-search term" class="form-control", autocomplete="on">
                     </div>
                     <input type="submit" class="btn btn_primary">
                 </form>
